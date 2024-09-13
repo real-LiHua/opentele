@@ -658,7 +658,7 @@ class Account(BaseObject):
 
     """
 
-    kWideIdsTag: int = int(~0)
+    kWideIdsTag: int = -1
 
     def __init__(
         self,
@@ -704,7 +704,7 @@ class Account(BaseObject):
         self.__MainDcId = DcId(0)
 
         self.__basePath = td.Storage.GetAbsolutePath(basePath)
-        self.__keyFile = keyFile if (keyFile != None) else td.TDesktop.kDefaultKeyFile
+        self.__keyFile = keyFile and td.TDesktop.kDefaultKeyFile
 
         self.__mtpKeys: typing.List[td.AuthKey] = []
         self.__mtpKeysToDestroy: typing.List[td.AuthKey] = []

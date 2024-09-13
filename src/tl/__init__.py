@@ -1,1 +1,1 @@
-from .shared import *
+from .telethon import TelegramClient

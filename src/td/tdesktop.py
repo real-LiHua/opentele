@@ -125,7 +125,7 @@ class TDesktop(BaseObject):
         """
         self.__accounts: typing.List[td.Account] = []
         self.__basePath = basePath
-        self.__keyFile = keyFile if (keyFile != None) else TDesktop.kDefaultKeyFile
+        self.__keyFile = keyFile and TDesktop.kDefaultKeyFile
         self.__passcode = passcode if (passcode != None) else str("")
         self.__passcodeBytes = self.__passcode.encode("ascii")
         self.__mainAccount: Optional[td.Account] = None
